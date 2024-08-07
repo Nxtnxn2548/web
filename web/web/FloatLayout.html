@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CSS Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+  background-color: #666;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+  float: left;
+  width: 30%;
+  height: 754px; /* only for demonstration, should be removed */
+  background: #ccc;
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  background-color: #f1f1f1;
+  height: 754px; /* only for demonstration, should be removed */
+}
+
+/* Clear floats after the columns */
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the footer */
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+</style>
+</head>
+<body>
+
+<h2>CSS Layout Float</h2>
+<p>In this example, we have created a header, two columns/boxes and a footer. On smaller screens, the columns will stack on top of each other.</p>
+<p>Resize the browser window to see the responsive effect (you will learn more about this in our next chapter - HTML Responsive.)</p>
+
+<header>
+  <h2>Cities</h2>
+</header>
+
+<section>
+  <nav>
+    <ul>
+      <li><a href="#">London</a></li>
+      <li><a href="#">Paris</a></li>
+      <li><a href="#">Tokyo</a></li>
+    </ul>
+  </nav>
+  
+  <article>
+    <form>
+    <h1> แบบฟอร์ม สมัครเข้าศึกษาต่อ </h1>
+    <div>
+    <table border="2" width="600px">
+        <tr> 
+            <th width="30%">Input</th>
+            <th>User Input</th>
+        </tr>
+        <tr>
+            <!-- row 1 -->
+            <td>กรอกรหัส นศ.* :</td>
+            <td><input type="text" name="std-id" id=""></td>
+          </tr>
+          <tr>
+            <!-- row 2 -->
+            <td>กรอกชื่อ นศ. :</td>
+            <td><input type="text" name="std-name" id=""></td>
+          </tr>
+          <tr>
+            <!-- row 3 -->
+            <td>กรอกอีเมล :</td>
+            <td><input type="email" name="std-mail"></td>
+          </tr>
+          <tr>
+            <!-- row 4 -->
+            <td>กรอกรหัสผ่าน :</td>
+            <td><input type="password" name="std-mail" id=""></td>
+          </tr>
+          <tr>
+            <!-- row 5 -->
+            <td>กรอกเบอร์โทร :</td>
+            <td><input type="tel" name="std-tel"></td>
+          </tr>
+          <tr>
+            <!-- row 6 -->
+            <td>วันเดือนปีเกิด :</td>
+            <td><input type="date" name="std-birthdate" id=""></td>
+          </tr>
+          <tr>
+            <!-- row 7 -->
+            <td>สีที่คุณชอบ :</td>
+            <td><input type="color" name="std-color"></td>
+          </tr>
+          <tr>
+            <!-- row 8 -->
+            <td>ส่วนสูง : [100 - 250 CM]</td>
+            <td><input type="number" name="std-height" min="100" max="250"> CM.</td>
+          </tr>
+          <tr>
+            <!-- row 9 -->
+            <td>น้ำหนัก : [20 - 200 KG]</td>
+            <td><input type="number" name="std-weight" min="20" max="200"> KG.</td>
+          </tr>
+          <tr>
+            <!-- row 10 -->
+            <td>รูปภาพ หน้าตรง :</td>
+            <td><input type="file" name="std-image"></td>
+          </tr>
+          <tr>
+            <td>สาขาวิชา :</td>
+            <td>
+              <input type="radio" name="major" value="INET"> INET <br>
+              <input type="radio" name="major" value="INE"> INE <br>
+              <input type="radio" name="major" value="ITI"> ITI <br>
+              <input type="radio" name="major" value="IT"> IT
+            </td>
+          </tr>
+          <tr>
+            <!-- row 11 -->
+            <td>อาหารที่ชอบ :</td>
+            <td>
+              <input type="checkbox" name="food1" value="ham"> ham <br>
+              <input type="checkbox" name="food2" value="rice"> rice <br>
+              <input type="checkbox" name="food3" value="steak"> steak
+            </td>
+          </tr>
+          <tr>
+            <!-- row 11 -->
+            <td>ที่อยู่ :</td>
+            <td><textarea name="address" cols="30" rows="5">ที่อยู่ปัจจุบัน</textarea></td>
+          </tr>
+          <tr>
+            <!-- row 12 -->
+            <td>ชั้นปี :</td>
+            <td>
+              <select name="std-year">
+                <option value="1">ปี 1</option>
+                <option value="2">ปี 2</option>
+                <option value="3">ปี 3</option>
+                <option value="4">ปี 4</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <!-- row N -->
+            <td>ยืนยันข้อมูล :</td>
+            <td>
+              <input type="submit" name="" value="OK">
+              <input type="reset" name="" value="Cancel">
+            </td>
+          </tr>
+        </table>
+      </div>
+    </form>
+  </article>
+</section>
+
+
+
+
+<footer>
+  <p>Footer</p>
+</footer>
+
+</body>
+</html>
